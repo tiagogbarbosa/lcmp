@@ -53,22 +53,13 @@ And all things will be done in a few minutes.
 
 ## Installation
 
-- If your server's OS: Enterprise Linux 7 / 8 / 9
-```bash
-yum -y install wget git
-git clone https://github.com/teddysun/lcmp.git
-cd lcmp
-chmod 755 *.sh
-./lcmp.sh 2>&1 | tee lcmp.log
-```
-
 - If your server's OS: Debian 10+ / Ubuntu 20.04+
 ```bash
-apt-get -y install wget git
-git clone https://github.com/teddysun/lcmp.git
+apt -y install wget git
+git clone https://github.com/tiagogbarbosa/lcmp.git
 cd lcmp
 chmod 755 *.sh
-./lcmp.sh 2>&1 | tee lcmp.log
+./lcmp.sh
 ```
 
 ## Upgrade
