@@ -294,8 +294,6 @@ _info "Press any key to start...or Press Ctrl+C to cancel"
 char=$(get_char)
 
 _info "VPS initialization start"
-_error_detect "rm -f /etc/localtime"
-_error_detect "ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime"
 if check_sys rhel; then
     _error_detect "yum install -yq yum-utils epel-release"
     _error_detect "yum-config-manager --enable epel"
@@ -408,9 +406,7 @@ cat >/etc/caddy/Caddyfile <<EOF
 }
 import /etc/caddy/conf.d/*.conf
 EOF
-_error_detect "cp -f ${cur_dir}/conf/favicon.ico /data/www/default/"
-_error_detect "cp -f ${cur_dir}/conf/index.html /data/www/default/"
-_error_detect "cp -f ${cur_dir}/conf/lcmp.png /data/www/default/"
+_error_detect "echo > /data/www/default/index.php"
 _info "Set Caddy completed"
 
 _error_detect "wget -qO mariadb_repo_setup.sh https://downloads.mariadb.com/MariaDB/mariadb_repo_setup"
